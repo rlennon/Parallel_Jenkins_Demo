@@ -34,7 +34,7 @@ pipeline {
             }
             
         }
-        stage ('Stg3') {
+        stage ('Stg4') {
 
             when {
                 branch "featurebranch2"
