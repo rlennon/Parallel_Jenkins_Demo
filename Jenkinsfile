@@ -40,7 +40,7 @@ pipeline {
                 branch "featurebranch2"
             }
             steps {
-                    sh `echo "jenkinsfile added this in from the featurebranch2" >> someNewFile.txt`
+                    echo "jenkinsfile added this in from the featurebranch2" >> someNewFile.txt
             }
             
         }
