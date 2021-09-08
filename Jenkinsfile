@@ -34,15 +34,26 @@ pipeline {
             }
             
         }
-        stage ('Stg4') {
-
-            when {
-                branch "featurebranch2"
+        stage ('Stg4'){
+            parallel
+            {
+                stage("4.1"){
+                    when {
+                        branch 'featurebranch2'
+                    }
+                    steps {
+                        echo "jenkinsfile added this in from the featurebranch2" >> someNewFile.txt
+                    }
+                }
+                stage("4.2"){
+                    when {
+                        branch 'main'
+                    }
+                    steps {
+                        echo "parallel branch main build"
+                    }
+                }
             }
-            steps {
-                    echo "jenkinsfile added this in from the featurebranch2" >> someNewFile.txt
-            }
-            
         }
     }
 }
