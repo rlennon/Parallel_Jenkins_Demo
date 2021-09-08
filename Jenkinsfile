@@ -11,7 +11,7 @@ pipeline {
             parallel
             {
                 stage("2.1"){
-                    steos {
+                    steps {
                         echo "This is step 2.1"
                     }
                 }
