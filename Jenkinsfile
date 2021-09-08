@@ -34,5 +34,15 @@ pipeline {
             }
             
         }
+        stage ('Stg3') {
+
+            when {
+                branch "featurebranch2"
+            }
+            steps {
+                    sh `echo "jenkinsfile added this in from the featurebranch2" >> someNewFile.txt`
+            }
+            
+        }
     }
 }
